@@ -1,7 +1,7 @@
-build
-*/build
+build/
+app/build/
+.gradle/
 *.iml
-.gradle
 .idea
 .DS_Store
 .externalNativeBuild
