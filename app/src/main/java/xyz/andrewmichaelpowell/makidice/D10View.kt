@@ -203,8 +203,6 @@ fun D10View(onBack: () -> Unit) {
                 val strokeWidth = 2.5.dp.toPx()
                 val w = size.width
                 val h = size.height
-                // Symmetric "<" path: right-top -> left-middle -> right-bottom,
-                // all points defined relative to the exact center so it can't drift.
                 val path = Path().apply {
                     moveTo(w * 0.68f, h * 0.12f)
                     lineTo(w * 0.28f, h * 0.5f)
