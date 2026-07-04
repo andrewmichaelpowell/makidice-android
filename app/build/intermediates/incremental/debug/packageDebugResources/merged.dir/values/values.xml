@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="ic_launcher_background">#FFFFFF</color>
     <string name="app_name">Maki Dice</string>
     <string name="clear">Clear</string>
     <string name="d10">D10</string>

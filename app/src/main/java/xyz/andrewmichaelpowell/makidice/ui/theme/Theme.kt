@@ -7,6 +7,7 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
+// Equivalents of the UIKit system colors used in the SwiftUI app.
 val Teal = Color(0xFF30B0C7)
 val Orange = Color(0xFFFF9500)
 val SecondarySystemBackgroundLight = Color(0xFFEFEFF4)

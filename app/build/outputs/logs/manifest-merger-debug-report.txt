@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-22:12
-INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-22:12
+ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-23:12
+INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:1-23:12
 MERGED from [androidx.navigation:navigation-common:2.7.7] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/9bb33cfe8afd9b90e55311f9b47a1979/transformed/navigation-common-2.7.7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-runtime:2.7.7] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/9dcd3c1062c2c5c04192b0f44a8f31ee/transformed/navigation-runtime-2.7.7/AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-common-ktx:2.7.7] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/bde2c333778ea81a8eba49c545e80025/transformed/navigation-common-ktx-2.7.7/AndroidManifest.xml:2:1-7:12
@@ -75,8 +75,8 @@ MERGED from [androidx.arch.core:core-runtime:2.2.0] /Users/andrewmichaelpowell/.
 	xmlns:android
 		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:2:11-69
 application
-ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:4:5-20:19
-INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:4:5-20:19
+ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:4:5-21:19
+INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:4:5-21:19
 MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/360b66b5a6e4f0f53b41cdf09932b074/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.emoji2:emoji2:1.4.0] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/360b66b5a6e4f0f53b41cdf09932b074/transformed/emoji2-1.4.0/AndroidManifest.xml:23:5-33:19
 MERGED from [androidx.window:window:1.5.0] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/ceb42d8362cb4675226ac1510c6cb428/transformed/window-1.5.0/AndroidManifest.xml:22:5-29:19
@@ -96,35 +96,37 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] /Users/andrewmichaelpowell/
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.16.0] /Users/andrewmichaelpowell/.gradle/caches/9.6.0/transforms/79cf94886fd134099a39a0580d2e6bed/transformed/core-1.16.0/AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:8:9-35
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:9:9-35
 	android:label
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:7:9-41
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:7:9-54
 	android:icon
 		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:6:9-43
 	android:allowBackup
 		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:5:9-35
 	android:theme
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:9:9-46
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:10:9-46
 activity#xyz.andrewmichaelpowell.makidice.MainActivity
-ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:10:9-19:20
+ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:11:9-20:20
 	android:label
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:13:13-45
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:14:13-45
 	android:exported
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:12:13-36
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:13:13-36
 	android:theme
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:14:13-50
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:15:13-50
 	android:name
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:11:13-41
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:12:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:15:13-18:29
+ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:16:13-19:29
 action#android.intent.action.MAIN
-ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:16:17-69
+ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:17:17-69
 	android:name
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:16:25-66
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:17:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:17:17-77
+ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:18:17-77
 	android:name
-		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:17:27-74
+		ADDED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml:18:27-74
 uses-sdk
 INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/andrewmichaelpowell/Documents/Projects/makidice-android/app/src/main/AndroidManifest.xml

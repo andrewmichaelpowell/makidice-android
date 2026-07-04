@@ -3,6 +3,7 @@ package xyz.andrewmichaelpowell.makidice
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
@@ -18,12 +19,16 @@ class MainActivity : ComponentActivity() {
             MakiDiceTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     val navController = rememberNavController()
-                    NavHost(navController = navController, startDestination = "main") {
+                    NavHost(
+                        navController = navController,
+                        startDestination = "main",
+                        modifier = Modifier.safeDrawingPadding(),
+                    ) {
                         composable("main") {
                             MainView(onOpenD10 = { navController.navigate("d10") })
                         }
                         composable("d10") {
-                            D10View()
+                            D10View(onBack = { navController.popBackStack() })
                         }
                     }
                 }

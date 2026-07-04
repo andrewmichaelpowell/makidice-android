@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
@@ -23,12 +24,15 @@ import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
 import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
 import kotlin.random.Random
 
+private val GroupSpacing = 32.dp
+
 @Composable
 fun MainView(onOpenD10: () -> Unit) {
+    // --- State (mirrors the @State vars in MainView.swift) ---
     var diceNumber by remember { mutableStateOf("") }
     var diceType by remember { mutableStateOf("") }
-    var editSide by remember { mutableIntStateOf(1) }
-    var resetInput by remember { mutableIntStateOf(1) }
+    var editSide by remember { mutableIntStateOf(1) }   // 1 = editing diceNumber, 2 = editing diceType
+    var resetInput by remember { mutableIntStateOf(1) } // 1 = next digit should clear prior roll first
     var resultString by remember { mutableStateOf("0") }
     var resultValue by remember { mutableIntStateOf(0) }
 
@@ -109,7 +113,9 @@ fun MainView(onOpenD10: () -> Unit) {
             textAlign = androidx.compose.ui.text.style.TextAlign.End,
         )
 
-        Column(modifier = Modifier.padding(vertical = 16.dp)) {
+        Spacer(modifier = Modifier.height(8.dp))
+
+        Column(modifier = Modifier.padding(top = 16.dp)) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 QuickButton(4, Modifier.weight(1f)) { quickRoll(4) }
                 QuickButton(6, Modifier.weight(1f)) { quickRoll(6) }
@@ -126,6 +132,8 @@ fun MainView(onOpenD10: () -> Unit) {
                 DiceButton(label = stringResource(R.string.d10), tint = Teal, modifier = Modifier.weight(1f)) { onOpenD10() }
             }
         }
+
+        Spacer(modifier = Modifier.height(GroupSpacing))
 
         Column {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -150,7 +158,7 @@ fun MainView(onOpenD10: () -> Unit) {
             }
         }
 
-        Spacer(modifier = Modifier.padding(vertical = 8.dp))
+        Spacer(modifier = Modifier.height(GroupSpacing))
     }
 }
 
