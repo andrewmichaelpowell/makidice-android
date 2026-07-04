@@ -1,5 +1,6 @@
 package xyz.andrewmichaelpowell.makidice
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -13,7 +14,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material3.LocalTextStyle
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,14 +25,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Path
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.LineHeightStyle
-import androidx.compose.ui.text.PlatformTextStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
 import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
 import kotlin.random.Random
@@ -191,6 +189,7 @@ fun D10View(onBack: () -> Unit) {
             Spacer(modifier = Modifier.height(GroupSpacing))
         }
 
+        val onSurfaceColor = MaterialTheme.colorScheme.onSurface
         Box(
             modifier = Modifier
                 .align(Alignment.TopStart)
@@ -200,20 +199,27 @@ fun D10View(onBack: () -> Unit) {
                 .clickable(onClick = onBack),
             contentAlignment = Alignment.Center,
         ) {
-            Text(
-                text = "\u2039", // ‹
-                fontSize = 22.sp,
-                lineHeight = 22.sp,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurface,
-                style = LocalTextStyle.current.copy(
-                    platformStyle = PlatformTextStyle(includeFontPadding = false),
-                    lineHeightStyle = LineHeightStyle(
-                        alignment = LineHeightStyle.Alignment.Center,
-                        trim = LineHeightStyle.Trim.Both,
+            Canvas(modifier = Modifier.size(14.dp)) {
+                val strokeWidth = 2.5.dp.toPx()
+                val w = size.width
+                val h = size.height
+                // Symmetric "<" path: right-top -> left-middle -> right-bottom,
+                // all points defined relative to the exact center so it can't drift.
+                val path = Path().apply {
+                    moveTo(w * 0.68f, h * 0.12f)
+                    lineTo(w * 0.28f, h * 0.5f)
+                    lineTo(w * 0.68f, h * 0.88f)
+                }
+                drawPath(
+                    path = path,
+                    color = onSurfaceColor,
+                    style = Stroke(
+                        width = strokeWidth,
+                        cap = androidx.compose.ui.graphics.StrokeCap.Round,
+                        join = androidx.compose.ui.graphics.StrokeJoin.Round,
                     ),
-                ),
-            )
+                )
+            }
         }
     }
 }
