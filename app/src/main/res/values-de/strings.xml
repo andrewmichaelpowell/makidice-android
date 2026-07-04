@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?><resources>
+<string name="clear">Leeren</string>
+<string name="dice">Würfel</string>
+<string name="difficulty">Schwierigkeit</string>
+<string name="roll">Würfeln</string>
+<string name="successes">Erfolge</string>
+</resources>

@@ -12,11 +12,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 
-/**
- * Mirrors the SwiftUI pattern used throughout MainView.swift / D10View.swift:
- *   Button(action: ...) { Text(...).font(.title).frame(maxWidth: .infinity, maxHeight: 50) }
- *     .buttonStyle(.borderedProminent).tint(color)
- */
 @Composable
 fun DiceButton(
     modifier: Modifier = Modifier,

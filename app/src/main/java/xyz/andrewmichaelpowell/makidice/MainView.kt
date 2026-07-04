@@ -28,11 +28,10 @@ private val GroupSpacing = 32.dp
 
 @Composable
 fun MainView(onOpenD10: () -> Unit) {
-    // --- State (mirrors the @State vars in MainView.swift) ---
     var diceNumber by remember { mutableStateOf("") }
     var diceType by remember { mutableStateOf("") }
-    var editSide by remember { mutableIntStateOf(1) }   // 1 = editing diceNumber, 2 = editing diceType
-    var resetInput by remember { mutableIntStateOf(1) } // 1 = next digit should clear prior roll first
+    var editSide by remember { mutableIntStateOf(1) }
+    var resetInput by remember { mutableIntStateOf(1) }
     var resultString by remember { mutableStateOf("0") }
     var resultValue by remember { mutableIntStateOf(0) }
 
