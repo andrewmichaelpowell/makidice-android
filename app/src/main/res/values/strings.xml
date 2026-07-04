@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Maki Dice</string>
+    <string name="clear">Clear</string>
+    <string name="dice">Dice</string>
+    <string name="difficulty">Difficulty</string>
+    <string name="successes">Successes</string>
+    <string name="d10">D10</string>
+    <string name="roll">Roll</string>
+    <string name="d_button">d</string>
+</resources>
