@@ -35,9 +35,6 @@ import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
 import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
 import kotlin.random.Random
 
-private val LabelRowGap = 0.dp
-private val GroupSpacing = 32.dp
-
 @Composable
 fun D10View(onBack: () -> Unit) {
     var diceString by remember { mutableStateOf("0") }
@@ -106,7 +103,7 @@ fun D10View(onBack: () -> Unit) {
                     textAlign = TextAlign.End,
                 )
             }
-            Spacer(modifier = Modifier.height(LabelRowGap))
+            Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     text = stringResource(R.string.difficulty),
@@ -125,7 +122,7 @@ fun D10View(onBack: () -> Unit) {
                     textAlign = TextAlign.End,
                 )
             }
-            Spacer(modifier = Modifier.height(LabelRowGap))
+            Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
                 Text(
                     text = stringResource(R.string.successes),
@@ -144,16 +141,16 @@ fun D10View(onBack: () -> Unit) {
                 )
             }
 
-            Spacer(modifier = Modifier.height(GroupSpacing))
+            Spacer(modifier = Modifier.height(32.dp))
 
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                DiceButton(
+                ComposeButton(
                     label = stringResource(R.string.dice),
                     tint = if (selected == 1) Teal else MaterialTheme.colorScheme.surfaceVariant,
                     contentColor = if (selected == 1) Color.White else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
                 ) { selected = 1 }
-                DiceButton(
+                ComposeButton(
                     label = stringResource(R.string.difficulty),
                     tint = if (selected == 2) Teal else MaterialTheme.colorScheme.surfaceVariant,
                     contentColor = if (selected == 2) Color.White else MaterialTheme.colorScheme.onSurface,
@@ -161,32 +158,32 @@ fun D10View(onBack: () -> Unit) {
                 ) { selected = 2 }
             }
 
-            Spacer(modifier = Modifier.height(GroupSpacing))
+            Spacer(modifier = Modifier.height(32.dp))
 
             Column {
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    PoolNumberButton(1, Modifier.weight(1f)) { addValueToSide(1) }
-                    PoolNumberButton(2, Modifier.weight(1f)) { addValueToSide(2) }
-                    PoolNumberButton(3, Modifier.weight(1f)) { addValueToSide(3) }
+                    D10Button(1, Modifier.weight(1f)) { addValueToSide(1) }
+                    D10Button(2, Modifier.weight(1f)) { addValueToSide(2) }
+                    D10Button(3, Modifier.weight(1f)) { addValueToSide(3) }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                    PoolNumberButton(4, Modifier.weight(1f)) { addValueToSide(4) }
-                    PoolNumberButton(5, Modifier.weight(1f)) { addValueToSide(5) }
-                    PoolNumberButton(6, Modifier.weight(1f)) { addValueToSide(6) }
+                    D10Button(4, Modifier.weight(1f)) { addValueToSide(4) }
+                    D10Button(5, Modifier.weight(1f)) { addValueToSide(5) }
+                    D10Button(6, Modifier.weight(1f)) { addValueToSide(6) }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                    PoolNumberButton(7, Modifier.weight(1f)) { addValueToSide(7) }
-                    PoolNumberButton(8, Modifier.weight(1f)) { addValueToSide(8) }
-                    PoolNumberButton(9, Modifier.weight(1f)) { addValueToSide(9) }
+                    D10Button(7, Modifier.weight(1f)) { addValueToSide(7) }
+                    D10Button(8, Modifier.weight(1f)) { addValueToSide(8) }
+                    D10Button(9, Modifier.weight(1f)) { addValueToSide(9) }
                 }
                 Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                    DiceButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
-                    PoolNumberButton(10, Modifier.weight(1f)) { addValueToSide(10) }
-                    DiceButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
+                    ComposeButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
+                    D10Button(10, Modifier.weight(1f)) { addValueToSide(10) }
+                    ComposeButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
                 }
             }
 
-            Spacer(modifier = Modifier.height(GroupSpacing))
+            Spacer(modifier = Modifier.height(32.dp))
         }
 
         val onSurfaceColor = MaterialTheme.colorScheme.onSurface
@@ -223,8 +220,8 @@ fun D10View(onBack: () -> Unit) {
 }
 
 @Composable
-private fun PoolNumberButton(digit: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
-    DiceButton(
+private fun D10Button(digit: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
+    ComposeButton(
         label = digit.toString(),
         tint = MaterialTheme.colorScheme.surfaceVariant,
         contentColor = MaterialTheme.colorScheme.onSurface,

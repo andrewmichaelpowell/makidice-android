@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -17,14 +19,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
 import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
 import kotlin.random.Random
-
-private val GroupSpacing = 32.dp
 
 @Composable
 fun MainView(onOpenD10: () -> Unit) {
@@ -126,13 +127,13 @@ fun MainView(onOpenD10: () -> Unit) {
                 QuickButton(20, Modifier.weight(1f)) { quickRoll(20) }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                DiceButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
+                ComposeButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
                 QuickButton(100, Modifier.weight(1f)) { quickRoll(100) }
-                DiceButton(label = stringResource(R.string.d10), tint = Teal, modifier = Modifier.weight(1f)) { onOpenD10() }
+                ComposeButton(label = stringResource(R.string.d10), tint = Teal, modifier = Modifier.weight(1f)) { onOpenD10() }
             }
         }
 
-        Spacer(modifier = Modifier.height(GroupSpacing))
+        Spacer(modifier = Modifier.height(32.dp))
 
         Column {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
@@ -151,19 +152,19 @@ fun MainView(onOpenD10: () -> Unit) {
                 NumberButton(9, Modifier.weight(1f)) { appendDigit(9) }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                DiceButton(label = stringResource(R.string.d_button), tint = Orange, modifier = Modifier.weight(1f)) { pressD() }
-                DiceButton(label = "0", tint = MaterialTheme.colorScheme.surfaceVariant, contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f)) { zero() }
-                DiceButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
+                ComposeButton(label = stringResource(R.string.d_button), tint = Orange, modifier = Modifier.weight(1f)) { pressD() }
+                ComposeButton(label = "0", tint = MaterialTheme.colorScheme.surfaceVariant, contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f)) { zero() }
+                ComposeButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
             }
         }
 
-        Spacer(modifier = Modifier.height(GroupSpacing))
+        Spacer(modifier = Modifier.height(32.dp))
     }
 }
 
 @Composable
 private fun QuickButton(sides: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
-    DiceButton(
+    ComposeButton(
         label = "1d$sides",
         tint = MaterialTheme.colorScheme.surfaceVariant,
         contentColor = MaterialTheme.colorScheme.onSurface,
@@ -174,11 +175,38 @@ private fun QuickButton(sides: Int, modifier: Modifier = Modifier, onClick: () -
 
 @Composable
 private fun NumberButton(digit: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
-    DiceButton(
+    ComposeButton(
         label = digit.toString(),
         tint = MaterialTheme.colorScheme.surfaceVariant,
         contentColor = MaterialTheme.colorScheme.onSurface,
         modifier = modifier,
         onClick = onClick,
     )
+}
+
+@Composable
+fun ComposeButton(
+    modifier: Modifier = Modifier,
+    label: String,
+    tint: Color,
+    contentColor: Color = Color.White,
+    onClick: () -> Unit,
+) {
+    Button(
+        onClick = onClick,
+        modifier = modifier
+            .fillMaxWidth()
+            .height(50.dp),
+        colors = ButtonDefaults.buttonColors(
+            containerColor = tint,
+            contentColor = contentColor,
+        ),
+    ) {
+        Text(
+            text = label,
+            style = MaterialTheme.typography.titleLarge,
+            maxLines = 1,
+            overflow = TextOverflow.Clip,
+        )
+    }
 }
