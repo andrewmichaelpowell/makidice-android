@@ -21,6 +21,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -31,9 +32,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import kotlin.random.Random
+import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
 import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
-import kotlin.random.Random
 
 @Composable
 fun D10View(onBack: () -> Unit) {
@@ -44,14 +48,21 @@ fun D10View(onBack: () -> Unit) {
     var selected by remember { mutableIntStateOf(1) }
     var successesString by remember { mutableStateOf("0") }
     var successesValue by remember { mutableIntStateOf(0) }
+    val scope = rememberCoroutineScope()
 
     fun clear() {
         diceValue = 0
         difficultyValue = 0
         successesValue = 0
-        diceString = "0"
-        difficultyString = "0"
-        successesString = "0"
+        diceString = ""
+        difficultyString = ""
+        successesString = ""
+        scope.launch {
+            delay(100.milliseconds)
+            diceString = "0"
+            difficultyString = "0"
+            successesString = "0"
+        }
     }
 
     fun addValueToSide(buttonValue: Int) {
@@ -77,7 +88,11 @@ fun D10View(onBack: () -> Unit) {
                 }
             }
             successesValue = successes
-            successesString = successesValue.toString()
+            successesString = ""
+            scope.launch {
+                delay(100.milliseconds)
+                successesString = successesValue.toString()
+            }
         }
     }
 

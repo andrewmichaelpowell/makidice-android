@@ -12,6 +12,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -23,9 +24,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
+import kotlin.random.Random
+import kotlin.time.Duration.Companion.milliseconds
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
 import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
-import kotlin.random.Random
 
 @Composable
 fun MainView(onOpenD10: () -> Unit) {
@@ -35,17 +39,27 @@ fun MainView(onOpenD10: () -> Unit) {
     var resetInput by remember { mutableIntStateOf(1) }
     var resultString by remember { mutableStateOf("0") }
     var resultValue by remember { mutableIntStateOf(0) }
+    val scope = rememberCoroutineScope()
+
+    fun revealAfterDelay(value: String) {
+        resultString = ""
+        scope.launch {
+            delay(100.milliseconds)
+            resultString = value
+        }
+    }
+
 
     fun quickRoll(quickDiceType: Int) {
         resultValue = Random.nextInt(1, quickDiceType + 1)
-        resultString = resultValue.toString()
+        revealAfterDelay(resultValue.toString())
     }
 
     fun clear() {
         editSide = 1
         diceNumber = ""
         diceType = ""
-        resultString = "0"
+        revealAfterDelay("0")
     }
 
     fun setRight(buttonValue: Int) {
@@ -95,7 +109,7 @@ fun MainView(onOpenD10: () -> Unit) {
             var total = 0
             repeat(n) { total += Random.nextInt(1, sides + 1) }
             resultValue = total
-            resultString = resultValue.toString()
+            revealAfterDelay(resultValue.toString())
             editSide = 1
             resetInput = 1
         }
