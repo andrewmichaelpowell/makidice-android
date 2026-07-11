@@ -52,6 +52,10 @@ fun MainView(onOpenD10: () -> Unit) {
 
     fun quickRoll(quickDiceType: Int) {
         resultValue = Random.nextInt(1, quickDiceType + 1)
+        editSide = 1
+        resetInput = 1
+        diceNumber = ""
+        diceType = ""
         revealAfterDelay(resultValue.toString())
     }
 
