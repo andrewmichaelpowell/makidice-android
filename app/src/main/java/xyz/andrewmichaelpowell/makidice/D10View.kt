@@ -1,3 +1,6 @@
+//  Maki Dice
+//  github.com/andrewmichaelpowell
+
 package xyz.andrewmichaelpowell.makidice
 
 import androidx.compose.foundation.Canvas
@@ -41,12 +44,12 @@ import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
 
 @Composable
 fun D10View(onBack: () -> Unit) {
-    var diceString by remember { mutableStateOf("0") }
+    var diceString by remember { mutableStateOf("") }
     var diceValue by remember { mutableIntStateOf(0) }
-    var difficultyString by remember { mutableStateOf("0") }
+    var difficultyString by remember { mutableStateOf("") }
     var difficultyValue by remember { mutableIntStateOf(0) }
     var selected by remember { mutableIntStateOf(1) }
-    var successesString by remember { mutableStateOf("0") }
+    var successesString by remember { mutableStateOf("") }
     var successesValue by remember { mutableIntStateOf(0) }
     val scope = rememberCoroutineScope()
 
@@ -57,12 +60,6 @@ fun D10View(onBack: () -> Unit) {
         diceString = ""
         difficultyString = ""
         successesString = ""
-        scope.launch {
-            delay(100.milliseconds)
-            diceString = "0"
-            difficultyString = "0"
-            successesString = "0"
-        }
     }
 
     fun addValueToSide(buttonValue: Int) {

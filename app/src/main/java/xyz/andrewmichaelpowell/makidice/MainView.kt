@@ -1,3 +1,6 @@
+//  Maki Dice
+//  github.com/andrewmichaelpowell
+
 package xyz.andrewmichaelpowell.makidice
 
 import androidx.compose.foundation.layout.Arrangement
@@ -37,7 +40,7 @@ fun MainView(onOpenD10: () -> Unit) {
     var diceType by remember { mutableStateOf("") }
     var editSide by remember { mutableIntStateOf(1) }
     var resetInput by remember { mutableIntStateOf(1) }
-    var resultString by remember { mutableStateOf("0") }
+    var resultString by remember { mutableStateOf("") }
     var resultValue by remember { mutableIntStateOf(0) }
     val scope = rememberCoroutineScope()
 
@@ -54,8 +57,8 @@ fun MainView(onOpenD10: () -> Unit) {
         resultValue = Random.nextInt(1, quickDiceType + 1)
         editSide = 1
         resetInput = 1
-        diceNumber = ""
-        diceType = ""
+        diceNumber = "1"
+        diceType = quickDiceType.toString()
         revealAfterDelay(resultValue.toString())
     }
 
@@ -63,7 +66,7 @@ fun MainView(onOpenD10: () -> Unit) {
         editSide = 1
         diceNumber = ""
         diceType = ""
-        revealAfterDelay("0")
+        resultString = ""
     }
 
     fun setRight(buttonValue: Int) {
