@@ -11,6 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
@@ -42,7 +43,15 @@ class MainActivity : ComponentActivity() {
                             MainView(onOpenD10 = { navController.navigate("d10") })
                         }
                         composable("d10") {
-                            D10View(onBack = { navController.popBackStack() })
+                            D10View(onBack = {
+                                if (navController.currentBackStackEntry
+                                        ?.lifecycle
+                                        ?.currentState
+                                        ?.isAtLeast(Lifecycle.State.RESUMED) == true
+                                ) {
+                                    navController.popBackStack()
+                                }
+                            })
                         }
                     }
                 }
