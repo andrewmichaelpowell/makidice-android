@@ -11,7 +11,7 @@ android {
         applicationId = "xyz.andrewmichaelpowell.makidice"
         minSdk = 26
         targetSdk = 37
-        versionCode = 6
+        versionCode = 7
         versionName = "1.9"
     }
 
@@ -21,6 +21,9 @@ android {
 
     buildTypes {
         release {
+            ndk {
+                debugSymbolLevel = "FULL"
+            }
             optimization {
                 enable = true
             }
