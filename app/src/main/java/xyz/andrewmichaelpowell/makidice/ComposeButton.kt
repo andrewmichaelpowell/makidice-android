@@ -60,8 +60,8 @@ fun ShrinkToFitText(
     minScaleFactor: Float = 0.2f,
 ) {
     val minFontSizeSp = maxFontSizeSp * minScaleFactor
-    var fontSizeSp by remember(text, maxFontSizeSp) { mutableFloatStateOf(maxFontSizeSp) }
-    var readyToDraw by remember(text, maxFontSizeSp) { mutableStateOf(false) }
+    var fontSizeSp by remember(maxFontSizeSp) { mutableFloatStateOf(maxFontSizeSp) }
+    var readyToDraw by remember(maxFontSizeSp) { mutableStateOf(false) }
 
     Text(
         text = text,
