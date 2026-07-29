@@ -98,15 +98,19 @@ fun D10View(onBack: () -> Unit) {
             Spacer(modifier = Modifier.weight(1f))
 
             Row(modifier = Modifier.fillMaxWidth()) {
-                ShrinkToFitText(
+                Text(
                     text = stringResource(R.string.dice),
-                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
+                    style = MaterialTheme.typography.displaySmall,
+                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
                     color = if (selected == 1) Teal else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                 )
                 Text(
                     text = diceString,
                     style = MaterialTheme.typography.displaySmall,
+                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
                     modifier = Modifier.weight(1f),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
@@ -115,15 +119,19 @@ fun D10View(onBack: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ShrinkToFitText(
+                Text(
                     text = stringResource(R.string.difficulty),
-                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
+                    style = MaterialTheme.typography.displaySmall,
+                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
                     color = if (selected == 2) Teal else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                 )
                 Text(
                     text = difficultyString,
                     style = MaterialTheme.typography.displaySmall,
+                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
                     modifier = Modifier.weight(1f),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
@@ -132,14 +140,18 @@ fun D10View(onBack: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                ShrinkToFitText(
+                Text(
                     text = stringResource(R.string.successes),
-                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
+                    style = MaterialTheme.typography.displaySmall,
+                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
                     modifier = Modifier.weight(1f),
+                    maxLines = 1,
+                    overflow = TextOverflow.Ellipsis,
                 )
                 Text(
                     text = successesString,
                     style = MaterialTheme.typography.displaySmall,
+                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
                     modifier = Modifier.weight(1f),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis,
