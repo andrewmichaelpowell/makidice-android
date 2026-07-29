@@ -18,7 +18,6 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -33,7 +32,6 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import kotlin.random.Random
 import kotlin.time.Duration.Companion.milliseconds
@@ -98,57 +96,45 @@ fun D10View(onBack: () -> Unit) {
             Spacer(modifier = Modifier.weight(1f))
 
             Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
+                ShrinkToFitText(
                     text = stringResource(R.string.dice),
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     color = if (selected == 1) Teal else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
-                Text(
+                ShrinkToFitText(
                     text = diceString,
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.End,
                 )
             }
             Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
+                ShrinkToFitText(
                     text = stringResource(R.string.difficulty),
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     color = if (selected == 2) Teal else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
-                Text(
+                ShrinkToFitText(
                     text = difficultyString,
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.End,
                 )
             }
             Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
+                ShrinkToFitText(
                     text = stringResource(R.string.successes),
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
-                Text(
+                ShrinkToFitText(
                     text = successesString,
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                     textAlign = TextAlign.End,
                 )
             }

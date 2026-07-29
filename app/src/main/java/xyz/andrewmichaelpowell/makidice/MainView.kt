@@ -11,10 +11,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -23,9 +20,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import kotlin.random.Random
 import kotlin.time.Duration.Companion.milliseconds
@@ -125,11 +120,9 @@ fun MainView(onOpenD10: () -> Unit) {
     Column(modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
         Spacer(modifier = Modifier.weight(1f))
 
-        Text(
+        ShrinkToFitText(
             text = resultString,
-            style = MaterialTheme.typography.displaySmall,
-            maxLines = 1,
-            overflow = TextOverflow.Ellipsis,
+            maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
             modifier = Modifier.fillMaxWidth(),
             textAlign = androidx.compose.ui.text.style.TextAlign.End,
         )
@@ -203,31 +196,4 @@ private fun NumberButton(digit: Int, modifier: Modifier = Modifier, onClick: () 
         modifier = modifier,
         onClick = onClick,
     )
-}
-
-@Composable
-fun ComposeButton(
-    modifier: Modifier = Modifier,
-    label: String,
-    tint: Color,
-    contentColor: Color = Color.White,
-    onClick: () -> Unit,
-) {
-    Button(
-        onClick = onClick,
-        modifier = modifier
-            .fillMaxWidth()
-            .height(50.dp),
-        colors = ButtonDefaults.buttonColors(
-            containerColor = tint,
-            contentColor = contentColor,
-        ),
-    ) {
-        Text(
-            text = label,
-            style = MaterialTheme.typography.titleLarge,
-            maxLines = 1,
-            overflow = TextOverflow.Clip,
-        )
-    }
 }
