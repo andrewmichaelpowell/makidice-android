@@ -98,13 +98,11 @@ fun D10View(onBack: () -> Unit) {
             Spacer(modifier = Modifier.weight(1f))
 
             Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
+                ShrinkToFitText(
                     text = stringResource(R.string.dice),
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     color = if (selected == 1) Teal else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
                 Text(
                     text = diceString,
@@ -117,13 +115,11 @@ fun D10View(onBack: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
+                ShrinkToFitText(
                     text = stringResource(R.string.difficulty),
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     color = if (selected == 2) Teal else MaterialTheme.colorScheme.onSurface,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
                 Text(
                     text = difficultyString,
@@ -136,12 +132,10 @@ fun D10View(onBack: () -> Unit) {
             }
             Spacer(modifier = Modifier.height(0.dp))
             Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
+                ShrinkToFitText(
                     text = stringResource(R.string.successes),
-                    style = MaterialTheme.typography.displaySmall,
+                    maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
                     modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
                 )
                 Text(
                     text = successesString,
