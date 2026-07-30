@@ -9,9 +9,9 @@ android {
 
     defaultConfig {
         applicationId = "xyz.andrewmichaelpowell.makidice"
-        minSdk = 26
+        minSdk = 29
         targetSdk = 37
-        versionCode = 11
+        versionCode = 13
         versionName = "1.9.1"
     }
 
