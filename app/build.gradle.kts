@@ -11,8 +11,8 @@ android {
         applicationId = "xyz.andrewmichaelpowell.makidice"
         minSdk = 29
         targetSdk = 37
-        versionCode = 13
-        versionName = "1.9.1"
+        versionCode = 14
+        versionName = "1.9.2"
     }
 
     buildFeatures {

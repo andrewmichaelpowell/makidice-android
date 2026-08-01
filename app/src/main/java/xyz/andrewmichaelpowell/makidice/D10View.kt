@@ -27,10 +27,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.Stroke
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -93,123 +94,14 @@ fun D10View(onBack: () -> Unit) {
         }
     }
 
-    Box(modifier = Modifier.fillMaxSize()) {
-        Column(modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
-            Spacer(modifier = Modifier.weight(1f))
+    val onSurfaceColor = MaterialTheme.colorScheme.onSurface
 
-            Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    text = stringResource(R.string.dice),
-                    style = MaterialTheme.typography.displaySmall,
-                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
-                    color = if (selected == 1) Teal else MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                Text(
-                    text = diceString,
-                    style = MaterialTheme.typography.displaySmall,
-                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
-                    modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    textAlign = TextAlign.End,
-                )
-            }
-            Spacer(modifier = Modifier.height(0.dp))
-            Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    text = stringResource(R.string.difficulty),
-                    style = MaterialTheme.typography.displaySmall,
-                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
-                    color = if (selected == 2) Teal else MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                Text(
-                    text = difficultyString,
-                    style = MaterialTheme.typography.displaySmall,
-                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
-                    modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    textAlign = TextAlign.End,
-                )
-            }
-            Spacer(modifier = Modifier.height(0.dp))
-            Row(modifier = Modifier.fillMaxWidth()) {
-                Text(
-                    text = stringResource(R.string.successes),
-                    style = MaterialTheme.typography.displaySmall,
-                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
-                    modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                )
-                Text(
-                    text = successesString,
-                    style = MaterialTheme.typography.displaySmall,
-                    fontSize = MaterialTheme.typography.displaySmall.fontSize * 0.9,
-                    modifier = Modifier.weight(1f),
-                    maxLines = 1,
-                    overflow = TextOverflow.Ellipsis,
-                    textAlign = TextAlign.End,
-                )
-            }
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                ComposeButton(
-                    label = stringResource(R.string.dice),
-                    tint = if (selected == 1) Teal else MaterialTheme.colorScheme.surfaceVariant,
-                    contentColor = if (selected == 1) Color.White else MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.weight(1f),
-                ) { selected = 1 }
-                ComposeButton(
-                    label = stringResource(R.string.difficulty),
-                    tint = if (selected == 2) Teal else MaterialTheme.colorScheme.surfaceVariant,
-                    contentColor = if (selected == 2) Color.White else MaterialTheme.colorScheme.onSurface,
-                    modifier = Modifier.weight(1f),
-                ) { selected = 2 }
-            }
-
-            Spacer(modifier = Modifier.height(32.dp))
-
-            Column {
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-                    D10Button(1, Modifier.weight(1f)) { addValueToSide(1) }
-                    D10Button(2, Modifier.weight(1f)) { addValueToSide(2) }
-                    D10Button(3, Modifier.weight(1f)) { addValueToSide(3) }
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                    D10Button(4, Modifier.weight(1f)) { addValueToSide(4) }
-                    D10Button(5, Modifier.weight(1f)) { addValueToSide(5) }
-                    D10Button(6, Modifier.weight(1f)) { addValueToSide(6) }
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                    D10Button(7, Modifier.weight(1f)) { addValueToSide(7) }
-                    D10Button(8, Modifier.weight(1f)) { addValueToSide(8) }
-                    D10Button(9, Modifier.weight(1f)) { addValueToSide(9) }
-                }
-                Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                    ComposeButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
-                    D10Button(10, Modifier.weight(1f)) { addValueToSide(10) }
-                    ComposeButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
-                }
-            }
-
-            Spacer(modifier = Modifier.height(32.dp))
-        }
-
-        val onSurfaceColor = MaterialTheme.colorScheme.onSurface
+    Column(modifier = Modifier.fillMaxSize().padding(horizontal = 16.dp)) {
         Box(
             modifier = Modifier
-                .align(Alignment.TopStart)
-                .padding(16.dp)
+                .padding(top = 16.dp)
                 .size(36.dp)
+                .clip(CircleShape)
                 .background(MaterialTheme.colorScheme.surfaceVariant, CircleShape)
                 .clickable(onClick = onBack),
             contentAlignment = Alignment.Center,
@@ -234,6 +126,102 @@ fun D10View(onBack: () -> Unit) {
                 )
             }
         }
+
+        Spacer(modifier = Modifier.weight(1f))
+
+        Row(modifier = Modifier.fillMaxWidth()) {
+            ShrinkToFitText(
+                text = stringResource(R.string.dice),
+                maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
+                color = if (selected == 1) Teal else MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+            )
+            Text(
+                text = diceString,
+                style = MaterialTheme.typography.displaySmall,
+                modifier = Modifier.weight(1f),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.End,
+            )
+        }
+        Spacer(modifier = Modifier.height(0.dp))
+        Row(modifier = Modifier.fillMaxWidth()) {
+            ShrinkToFitText(
+                text = stringResource(R.string.difficulty),
+                maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
+                color = if (selected == 2) Teal else MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+            )
+            Text(
+                text = difficultyString,
+                style = MaterialTheme.typography.displaySmall,
+                modifier = Modifier.weight(1f),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.End,
+            )
+        }
+        Spacer(modifier = Modifier.height(0.dp))
+        Row(modifier = Modifier.fillMaxWidth()) {
+            ShrinkToFitText(
+                text = stringResource(R.string.successes),
+                maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
+                modifier = Modifier.weight(1f),
+            )
+            Text(
+                text = successesString,
+                style = MaterialTheme.typography.displaySmall,
+                modifier = Modifier.weight(1f),
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+                textAlign = TextAlign.End,
+            )
+        }
+
+        Spacer(modifier = Modifier.height(16.dp))
+
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            ComposeButton(
+                label = stringResource(R.string.dice),
+                tint = if (selected == 1) Teal else MaterialTheme.colorScheme.surfaceVariant,
+                contentColor = if (selected == 1) Color.White else MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+            ) { selected = 1 }
+            ComposeButton(
+                label = stringResource(R.string.difficulty),
+                tint = if (selected == 2) Teal else MaterialTheme.colorScheme.surfaceVariant,
+                contentColor = if (selected == 2) Color.White else MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f),
+            ) { selected = 2 }
+        }
+
+        Spacer(modifier = Modifier.height(32.dp))
+
+        Column {
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                D10Button(1, Modifier.weight(1f)) { addValueToSide(1) }
+                D10Button(2, Modifier.weight(1f)) { addValueToSide(2) }
+                D10Button(3, Modifier.weight(1f)) { addValueToSide(3) }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
+                D10Button(4, Modifier.weight(1f)) { addValueToSide(4) }
+                D10Button(5, Modifier.weight(1f)) { addValueToSide(5) }
+                D10Button(6, Modifier.weight(1f)) { addValueToSide(6) }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
+                D10Button(7, Modifier.weight(1f)) { addValueToSide(7) }
+                D10Button(8, Modifier.weight(1f)) { addValueToSide(8) }
+                D10Button(9, Modifier.weight(1f)) { addValueToSide(9) }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
+                ComposeButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
+                D10Button(10, Modifier.weight(1f)) { addValueToSide(10) }
+                ComposeButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
+            }
+        }
+
+        Spacer(modifier = Modifier.height(32.dp))
     }
 }
 
