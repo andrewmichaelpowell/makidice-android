@@ -1,4 +1,4 @@
-//  Maki Dice
+//  Maki Dice (Android)
 //  github.com/andrewmichaelpowell
 
 package xyz.andrewmichaelpowell.makidice
