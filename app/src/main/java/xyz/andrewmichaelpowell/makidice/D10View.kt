@@ -41,7 +41,7 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
-import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
+import xyz.andrewmichaelpowell.makidice.ui.theme.Green
 
 @Composable
 fun D10View(onBack: () -> Unit) {
@@ -133,7 +133,7 @@ fun D10View(onBack: () -> Unit) {
             ShrinkToFitText(
                 text = stringResource(R.string.dice),
                 maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
-                color = if (selected == 1) Teal else MaterialTheme.colorScheme.onSurface,
+                color = if (selected == 1) Green else MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.weight(1f),
             )
             Text(
@@ -150,7 +150,7 @@ fun D10View(onBack: () -> Unit) {
             ShrinkToFitText(
                 text = stringResource(R.string.difficulty),
                 maxFontSizeSp = MaterialTheme.typography.displaySmall.fontSize.value,
-                color = if (selected == 2) Teal else MaterialTheme.colorScheme.onSurface,
+                color = if (selected == 2) Green else MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.weight(1f),
             )
             Text(
@@ -184,13 +184,13 @@ fun D10View(onBack: () -> Unit) {
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
             ComposeButton(
                 label = stringResource(R.string.dice),
-                tint = if (selected == 1) Teal else MaterialTheme.colorScheme.surfaceVariant,
+                tint = if (selected == 1) Green else MaterialTheme.colorScheme.surfaceVariant,
                 contentColor = if (selected == 1) Color.White else MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.weight(1f),
             ) { selected = 1 }
             ComposeButton(
                 label = stringResource(R.string.difficulty),
-                tint = if (selected == 2) Teal else MaterialTheme.colorScheme.surfaceVariant,
+                tint = if (selected == 2) Green else MaterialTheme.colorScheme.surfaceVariant,
                 contentColor = if (selected == 2) Color.White else MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.weight(1f),
             ) { selected = 2 }

@@ -29,7 +29,7 @@ import kotlin.time.Duration.Companion.milliseconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
-import xyz.andrewmichaelpowell.makidice.ui.theme.Teal
+import xyz.andrewmichaelpowell.makidice.ui.theme.Green
 
 @Composable
 fun MainView(onOpenD10: () -> Unit) {
@@ -147,7 +147,7 @@ fun MainView(onOpenD10: () -> Unit) {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
                 ComposeButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
                 QuickButton(100, Modifier.weight(1f)) { quickRoll(100) }
-                ComposeButton(label = stringResource(R.string.d10), tint = Teal, modifier = Modifier.weight(1f)) { onOpenD10() }
+                ComposeButton(label = stringResource(R.string.d10), tint = Green, modifier = Modifier.weight(1f)) { onOpenD10() }
             }
         }
 

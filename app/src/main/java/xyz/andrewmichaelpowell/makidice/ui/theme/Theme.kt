@@ -10,22 +10,22 @@ import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
-val Teal = Color(0xFF30B0C7)
-val Orange = Color(0xFFFF9500)
+val Green = Color(0xFF045030)
+val Orange = Color(0xFFF05C22)
 val SecondarySystemBackgroundLight = Color(0xFFEFEFF4)
 val SecondarySystemBackgroundDark = Color(0xFF1C1C1E)
 val LabelLight = Color(0xFF000000)
 val LabelDark = Color(0xFFFFFFFF)
 
 private val LightColors = lightColorScheme(
-    primary = Teal,
+    primary = Green,
     secondary = Orange,
     surfaceVariant = SecondarySystemBackgroundLight,
     onSurface = LabelLight,
 )
 
 private val DarkColors = darkColorScheme(
-    primary = Teal,
+    primary = Green,
     secondary = Orange,
     surfaceVariant = SecondarySystemBackgroundDark,
     onSurface = LabelDark,
