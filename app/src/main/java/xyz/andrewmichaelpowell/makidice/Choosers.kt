@@ -18,13 +18,16 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.selected
@@ -73,7 +76,12 @@ fun PageChooser(
                             .clickable(role = Role.Tab) { onSelect(index) },
                         contentAlignment = Alignment.Center,
                     ) {
-                        icon()
+                        CompositionLocalProvider(
+                            LocalContentColor provides
+                                if (isSelected) Color.White else LocalContentColor.current,
+                        ) {
+                            icon()
+                        }
                     }
                 }
             }
@@ -125,7 +133,7 @@ fun SegmentChooser(
                             text = label,
                             maxFontSizeSp = MaterialTheme.typography.titleLarge.fontSize.value,
                             color = when {
-                                isSelected -> androidx.compose.ui.graphics.Color.White
+                                isSelected -> Color.White
                                 else -> MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f)
                             },
                         )
