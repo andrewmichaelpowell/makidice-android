@@ -71,7 +71,6 @@ fun ComposeButton(
     }
 }
 
-/** A button like [ComposeButton] that shows an icon in place of a label. */
 @Composable
 fun ComposeIconButton(
     modifier: Modifier = Modifier,
