@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">کیلکولیٹر</string>
 <string name="clear">مٹانا</string>
 <string name="dice">ڈائس</string>
 <string name="difficulty">مشکل</string>

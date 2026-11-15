@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Calcolatrice</string>
 <string name="clear">Cancellare</string>
 <string name="dice">Dadi</string>
 <string name="difficulty">Difficoltà</string>

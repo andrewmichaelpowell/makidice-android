@@ -18,7 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -28,17 +28,15 @@ import kotlin.random.Random
 import kotlin.time.Duration.Companion.milliseconds
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
-import xyz.andrewmichaelpowell.makidice.ui.theme.Orange
-import xyz.andrewmichaelpowell.makidice.ui.theme.Green
 
 @Composable
-fun MainView(onOpenD10: () -> Unit) {
-    var diceNumber by remember { mutableStateOf("") }
-    var diceType by remember { mutableStateOf("") }
-    var editSide by remember { mutableIntStateOf(1) }
-    var resetInput by remember { mutableIntStateOf(1) }
-    var resultString by remember { mutableStateOf("") }
-    var resultValue by remember { mutableIntStateOf(0) }
+fun MainView() {
+    var diceNumber by rememberSaveable { mutableStateOf("") }
+    var diceType by rememberSaveable { mutableStateOf("") }
+    var editSide by rememberSaveable { mutableIntStateOf(1) }
+    var resetInput by rememberSaveable { mutableIntStateOf(1) }
+    var resultString by rememberSaveable { mutableStateOf("") }
+    var resultValue by rememberSaveable { mutableIntStateOf(0) }
     val scope = rememberCoroutineScope()
 
     fun revealAfterDelay(value: String) {
@@ -145,9 +143,9 @@ fun MainView(onOpenD10: () -> Unit) {
                 QuickButton(20, Modifier.weight(1f)) { quickRoll(20) }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                ComposeButton(label = stringResource(R.string.clear), tint = Orange, modifier = Modifier.weight(1f)) { clear() }
+                ComposeButton(label = stringResource(R.string.clear), prominent = true, modifier = Modifier.weight(1f)) { clear() }
                 QuickButton(100, Modifier.weight(1f)) { quickRoll(100) }
-                ComposeButton(label = stringResource(R.string.d10), tint = Green, modifier = Modifier.weight(1f)) { onOpenD10() }
+                ComposeButton(label = stringResource(R.string.roll), prominent = true, modifier = Modifier.weight(1f)) { roll() }
             }
         }
 
@@ -170,9 +168,9 @@ fun MainView(onOpenD10: () -> Unit) {
                 NumberButton(9, Modifier.weight(1f)) { appendDigit(9) }
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
-                ComposeButton(label = stringResource(R.string.d_button), tint = Orange, modifier = Modifier.weight(1f)) { pressD() }
-                ComposeButton(label = "0", tint = MaterialTheme.colorScheme.surfaceVariant, contentColor = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f)) { zero() }
-                ComposeButton(label = stringResource(R.string.roll), tint = Orange, modifier = Modifier.weight(1f)) { roll() }
+                ComposeButton(label = stringResource(R.string.d_button), prominent = true, modifier = Modifier.weight(1f)) { pressD() }
+                ComposeButton(label = "0", modifier = Modifier.weight(1f)) { zero() }
+                ComposeButton(label = stringResource(R.string.roll), prominent = true, modifier = Modifier.weight(1f)) { roll() }
             }
         }
 
@@ -184,8 +182,6 @@ fun MainView(onOpenD10: () -> Unit) {
 private fun QuickButton(sides: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
     ComposeButton(
         label = "1d$sides",
-        tint = MaterialTheme.colorScheme.surfaceVariant,
-        contentColor = MaterialTheme.colorScheme.onSurface,
         modifier = modifier,
         onClick = onClick,
     )
@@ -195,8 +191,6 @@ private fun QuickButton(sides: Int, modifier: Modifier = Modifier, onClick: () -
 private fun NumberButton(digit: Int, modifier: Modifier = Modifier, onClick: () -> Unit) {
     ComposeButton(
         label = digit.toString(),
-        tint = MaterialTheme.colorScheme.surfaceVariant,
-        contentColor = MaterialTheme.colorScheme.onSurface,
         modifier = modifier,
         onClick = onClick,
     )

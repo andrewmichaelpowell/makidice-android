@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Rekenmachine</string>
 <string name="clear">Wis</string>
 <string name="dice">Dobbelstenen</string>
 <string name="difficulty">Moeilijkheid</string>

@@ -11,8 +11,8 @@ android {
         applicationId = "xyz.andrewmichaelpowell.makidice"
         minSdk = 29
         targetSdk = 37
-        versionCode = 19
-        versionName = "2026.11.08"
+        versionCode = 20
+        versionName = "2026.11.16"
     }
 
     buildFeatures {
@@ -46,5 +46,4 @@ dependencies {
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.material3:material3")
-    implementation("androidx.navigation:navigation-compose:2.10.2")
 }

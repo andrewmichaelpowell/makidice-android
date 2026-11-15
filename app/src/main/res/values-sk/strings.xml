@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Kalkulačka</string>
 <string name="clear">Vymazať</string>
 <string name="dice">Kocky</string>
 <string name="difficulty">Náročnosť</string>

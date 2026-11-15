@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Számológép</string>
 <string name="clear">Töröl</string>
 <string name="dice">Dobókocka</string>
 <string name="difficulty">Nehézség</string>

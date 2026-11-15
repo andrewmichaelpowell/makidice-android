@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">מחשבון</string>
 <string name="clear">לִמְחוֹק</string>
 <string name="dice">קוּבִּיוֹת</string>
 <string name="difficulty">קוֹשִׁי</string>

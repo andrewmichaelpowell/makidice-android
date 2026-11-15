@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Kalkulator</string>
 <string name="clear">Padam</string>
 <string name="dice">Dadu</string>
 <string name="difficulty">Kesukaran</string>

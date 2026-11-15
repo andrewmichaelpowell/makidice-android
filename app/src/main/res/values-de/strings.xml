@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Rechner</string>
 <string name="clear">Leeren</string>
 <string name="dice">Würfel</string>
 <string name="difficulty">Schwierigkeit</string>

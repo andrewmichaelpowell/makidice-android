@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">계산기</string>
 <string name="clear">지우다</string>
 <string name="dice">주사위</string>
 <string name="difficulty">어려움</string>

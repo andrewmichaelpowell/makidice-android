@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Kalkulator</string>
 <string name="clear">Izbriši</string>
 <string name="dice">Kocke</string>
 <string name="difficulty">Teškoća</string>

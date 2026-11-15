@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">Máy tính</string>
 <string name="clear">Xóa</string>
 <string name="dice">Xúc Xắc</string>
 <string name="difficulty">Khó Khăn</string>

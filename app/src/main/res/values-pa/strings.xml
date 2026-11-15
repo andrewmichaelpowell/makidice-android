@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">ਕੈਲਕੁਲੇਟਰ</string>
 <string name="clear">ਮਿਟਾਓ</string>
 <string name="dice">ਪਾਸਾ</string>
 <string name="difficulty">ਮੁਸ਼ਕਲ</string>

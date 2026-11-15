@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><resources>
+<string name="calculator">เครื่องคิดเลข</string>
 <string name="clear">ลบ</string>
 <string name="dice">ลูกเต๋า</string>
 <string name="difficulty">ความยากลำบาก</string>
