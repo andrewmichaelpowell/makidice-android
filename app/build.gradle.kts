@@ -11,7 +11,7 @@ android {
         applicationId = "xyz.andrewmichaelpowell.makidice"
         minSdk = 29
         targetSdk = 37
-        versionCode = 20
+        versionCode = 21
         versionName = "2026.11.16"
     }
 
