@@ -104,9 +104,6 @@ fun MainView() {
         }
     }
 
-    // Removes the last digit typed. Past the first digit of the sides it
-    // removes the "d" and goes back to the number of dice. After a roll
-    // there's nothing typed to remove.
     fun backspace() {
         if (resetInput != 0) return
         if (editSide == 2) {
@@ -120,8 +117,6 @@ fun MainView() {
         } else if (diceNumber.isNotEmpty()) {
             diceNumber = diceNumber.dropLast(1)
             resultString = diceNumber
-            // With no dice left, the next digit starts afresh and "d" waits
-            // for one.
             if (diceNumber.isEmpty()) resetInput = 1
         }
     }
