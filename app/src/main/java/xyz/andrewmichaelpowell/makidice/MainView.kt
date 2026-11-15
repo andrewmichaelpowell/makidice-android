@@ -104,6 +104,28 @@ fun MainView() {
         }
     }
 
+    // Removes the last digit typed. Past the first digit of the sides it
+    // removes the "d" and goes back to the number of dice. After a roll
+    // there's nothing typed to remove.
+    fun backspace() {
+        if (resetInput != 0) return
+        if (editSide == 2) {
+            if (diceType.isEmpty()) {
+                editSide = 1
+                resultString = diceNumber
+            } else {
+                diceType = diceType.dropLast(1)
+                resultString = "${diceNumber}d$diceType"
+            }
+        } else if (diceNumber.isNotEmpty()) {
+            diceNumber = diceNumber.dropLast(1)
+            resultString = diceNumber
+            // With no dice left, the next digit starts afresh and "d" waits
+            // for one.
+            if (diceNumber.isEmpty()) resetInput = 1
+        }
+    }
+
     fun roll() {
         if (diceNumber != "" && diceType != "") {
             val n = diceNumber.toInt()
@@ -170,7 +192,12 @@ fun MainView() {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), modifier = Modifier.padding(top = 8.dp)) {
                 ComposeButton(label = stringResource(R.string.d_button), prominent = true, modifier = Modifier.weight(1f)) { pressD() }
                 ComposeButton(label = "0", modifier = Modifier.weight(1f)) { zero() }
-                ComposeButton(label = stringResource(R.string.roll), prominent = true, modifier = Modifier.weight(1f)) { roll() }
+                ComposeIconButton(
+                    icon = R.drawable.ic_backspace,
+                    contentDescription = stringResource(R.string.delete),
+                    prominent = true,
+                    modifier = Modifier.weight(1f),
+                ) { backspace() }
             }
         }
 

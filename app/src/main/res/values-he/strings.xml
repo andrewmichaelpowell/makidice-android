@@ -5,4 +5,5 @@
 <string name="difficulty">קוֹשִׁי</string>
 <string name="roll">לִזרוֹק</string>
 <string name="successes">הַצלָחָה</string>
+    <string name="delete">מחק</string>
 </resources>

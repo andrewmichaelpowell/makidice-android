@@ -5,4 +5,5 @@
 <string name="difficulty">சிரமம்</string>
 <string name="roll">உருட்டு</string>
 <string name="successes">வெற்றிகள்</string>
+    <string name="delete">நீக்கு</string>
 </resources>

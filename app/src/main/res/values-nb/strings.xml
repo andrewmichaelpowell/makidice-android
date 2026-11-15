@@ -5,4 +5,5 @@
 <string name="difficulty">Vanskelighet</string>
 <string name="roll">Kast</string>
 <string name="successes">Suksesser</string>
+    <string name="delete">Slett</string>
 </resources>

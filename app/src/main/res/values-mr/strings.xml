@@ -5,4 +5,5 @@
 <string name="difficulty">अडचण</string>
 <string name="roll">टाका</string>
 <string name="successes">यश</string>
+    <string name="delete">हटवा</string>
 </resources>

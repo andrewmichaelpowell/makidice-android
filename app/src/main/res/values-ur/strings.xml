@@ -5,4 +5,5 @@
 <string name="difficulty">مشکل</string>
 <string name="roll">رول</string>
 <string name="successes">کامیابیاں</string>
+    <string name="delete">حذف کریں</string>
 </resources>

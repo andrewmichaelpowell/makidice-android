@@ -5,4 +5,5 @@
 <string name="difficulty">Težavnost</string>
 <string name="roll">Vrzi</string>
 <string name="successes">Uspehi</string>
+    <string name="delete">Izbriši</string>
 </resources>

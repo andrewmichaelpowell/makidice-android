@@ -5,4 +5,5 @@
 <string name="difficulty">অসুবিধা</string>
 <string name="roll">গড়ানো</string>
 <string name="successes">সাফল্য</string>
+    <string name="delete">মুছুন</string>
 </resources>

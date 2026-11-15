@@ -5,4 +5,5 @@
 <string name="difficulty">कठिनाई</string>
 <string name="roll">फैंके</string>
 <string name="successes">सफलता</string>
+    <string name="delete">हटाएँ</string>
 </resources>

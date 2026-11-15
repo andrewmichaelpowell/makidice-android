@@ -4,6 +4,10 @@
 package xyz.andrewmichaelpowell.makidice
 
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.ui.res.painterResource
+import androidx.compose.material3.Icon
+import androidx.compose.foundation.layout.size
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -62,6 +66,35 @@ fun ComposeButton(
             ShrinkToFitText(
                 text = label,
                 maxFontSizeSp = MaterialTheme.typography.titleLarge.fontSize.value,
+            )
+        }
+    }
+}
+
+/** A button like [ComposeButton] that shows an icon in place of a label. */
+@Composable
+fun ComposeIconButton(
+    modifier: Modifier = Modifier,
+    @DrawableRes icon: Int,
+    contentDescription: String,
+    prominent: Boolean = false,
+    onClick: () -> Unit,
+) {
+    Surface(
+        onClick = onClick,
+        shape = CircleShape,
+        color = if (prominent) Orange else frostedColor(),
+        contentColor = if (prominent) Color.White else MaterialTheme.colorScheme.onSurface,
+        border = if (prominent) null else frostedBorder(),
+        modifier = modifier
+            .fillMaxWidth()
+            .height(50.dp),
+    ) {
+        Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+            Icon(
+                painterResource(icon),
+                contentDescription = contentDescription,
+                modifier = Modifier.size(26.dp),
             )
         }
     }

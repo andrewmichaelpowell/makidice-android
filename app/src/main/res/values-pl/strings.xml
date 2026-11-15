@@ -5,4 +5,5 @@
 <string name="difficulty">Trudność</string>
 <string name="roll">Rzuć</string>
 <string name="successes">Sukcesy</string>
+    <string name="delete">Usuń</string>
 </resources>

@@ -5,4 +5,5 @@
 <string name="difficulty">Dificultate</string>
 <string name="roll">Aruncă</string>
 <string name="successes">Succese</string>
+    <string name="delete">Șterge</string>
 </resources>

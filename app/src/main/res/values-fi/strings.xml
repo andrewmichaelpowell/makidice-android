@@ -5,4 +5,5 @@
 <string name="difficulty">Vaikeusaste</string>
 <string name="roll">Heittää</string>
 <string name="successes">Onnistumisia</string>
+    <string name="delete">Poista</string>
 </resources>

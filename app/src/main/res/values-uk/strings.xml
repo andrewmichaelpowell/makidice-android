@@ -5,4 +5,5 @@
 <string name="difficulty">Складність</string>
 <string name="roll">Киньте</string>
 <string name="successes">Успіхи</string>
+    <string name="delete">Видалити</string>
 </resources>

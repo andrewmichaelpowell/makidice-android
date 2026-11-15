@@ -5,4 +5,5 @@
 <string name="difficulty">Schwierigkeit</string>
 <string name="roll">Würfeln</string>
 <string name="successes">Erfolge</string>
+    <string name="delete">Löschen</string>
 </resources>

@@ -5,4 +5,5 @@
 <string name="difficulty">Obtížnost</string>
 <string name="roll">Hod</string>
 <string name="successes">Úspěchy</string>
+    <string name="delete">Smazat</string>
 </resources>

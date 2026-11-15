@@ -5,4 +5,5 @@
 <string name="difficulty">Khó Khăn</string>
 <string name="roll">Tung</string>
 <string name="successes">Thành Công</string>
+    <string name="delete">Xóa</string>
 </resources>

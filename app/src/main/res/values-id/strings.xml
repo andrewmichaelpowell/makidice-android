@@ -5,4 +5,5 @@
 <string name="difficulty">Kesulitan</string>
 <string name="roll">Lempar</string>
 <string name="successes">Keberhasilan</string>
+    <string name="delete">Hapus</string>
 </resources>

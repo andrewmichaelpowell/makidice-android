@@ -8,4 +8,5 @@
     <string name="calculator">Calculator</string>
     <string name="roll">Roll</string>
     <string name="d_button" translatable="false">d</string>
+    <string name="delete">Delete</string>
 </resources>

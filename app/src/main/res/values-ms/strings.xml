@@ -5,4 +5,5 @@
 <string name="difficulty">Kesukaran</string>
 <string name="roll">Gulung</string>
 <string name="successes">Kejayaan</string>
+    <string name="delete">Padam</string>
 </resources>

@@ -5,4 +5,5 @@
 <string name="difficulty">困難</string>
 <string name="roll">振る</string>
 <string name="successes">成功</string>
+    <string name="delete">削除</string>
 </resources>

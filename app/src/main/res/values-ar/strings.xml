@@ -5,4 +5,5 @@
 <string name="difficulty">صعوبة</string>
 <string name="roll">ألقِ</string>
 <string name="successes">النجاحات</string>
+    <string name="delete">حذف</string>
 </resources>

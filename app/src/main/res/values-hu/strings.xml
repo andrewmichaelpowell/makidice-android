@@ -5,4 +5,5 @@
 <string name="difficulty">Nehézség</string>
 <string name="roll">Dob</string>
 <string name="successes">Sikerek</string>
+    <string name="delete">Törlés</string>
 </resources>

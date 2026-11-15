@@ -5,4 +5,5 @@
 <string name="difficulty">어려움</string>
 <string name="roll">를 굴리세요</string>
 <string name="successes">성공</string>
+    <string name="delete">삭제</string>
 </resources>

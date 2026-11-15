@@ -5,4 +5,5 @@
 <string name="difficulty">Svårighet</string>
 <string name="roll">Slå</string>
 <string name="successes">Framgångar</string>
+    <string name="delete">Radera</string>
 </resources>
