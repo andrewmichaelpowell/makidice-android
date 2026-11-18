@@ -1,0 +1,1 @@
+Maki Dice on nopea ja helppo nopanheittopeli pöytäroolipeleihin. Heitä mitä tahansa tavallista monitahkoista noppaa yhdellä napautuksella, syötä mukautettuja heittoja numeronäppäimistöllä tai laske onnistumisia peleissä, jotka käyttävät noppia ja vaikeusasteikkoa.

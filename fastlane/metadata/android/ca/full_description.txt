@@ -1,0 +1,1 @@
+Maki Dice és un llançador de daus ràpid i fàcil per a jocs de rol de taula. Llança qualsevol dels daus polièdrics estàndard amb un sol toc, introdueix tirades personalitzades amb el teclat numèric o calcula els èxits per a jocs que utilitzen un sistema de daus i dificultat.

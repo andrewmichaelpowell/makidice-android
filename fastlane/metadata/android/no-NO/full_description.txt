@@ -1,0 +1,1 @@
+Maki Dice er et raskt og enkelt terningkast for brettrollespill. Kast hvilken som helst av de vanlige polyedriske terningene med et enkelt trykk, skriv inn egendefinerte terningkast med talltastaturet, eller beregn suksesser for spill som bruker et terning- og vanskelighetssystem.

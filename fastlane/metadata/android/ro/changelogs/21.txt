@@ -1,0 +1,1 @@
+Această versiune include îmbunătățiri minore ale interfeței cu utilizatorul.

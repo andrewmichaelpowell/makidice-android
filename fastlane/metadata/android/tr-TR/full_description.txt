@@ -1,0 +1,1 @@
+Maki Dice, masaüstü rol yapma oyunları için hızlı ve kolay bir zar atma uygulamasıdır. Tek bir dokunuşla standart çok yüzlü zarlardan herhangi birini atın, sayı tuş takımını kullanarak özel zar atışları girin veya zar ve zorluk sistemi kullanan oyunlar için başarıları hesaplayın.

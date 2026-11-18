@@ -1,0 +1,1 @@
+Maki Dice je brz i jednostavan program za bacanje kockica za stolne RPG igre. Bacajte bilo koju od standardnih poliedarskih kockica jednim dodirom, unesite prilagođene bacanja pomoću numeričke tipkovnice ili izračunajte uspjehe za igre koje koriste sustav kockica i težine.

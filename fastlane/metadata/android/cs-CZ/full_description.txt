@@ -1,0 +1,1 @@
+Maki Dice je rychlá a snadná hra na házení kostkami pro stolní hry na hrdiny. Hoďte jakoukoli standardní polyedrickou kostkou jediným klepnutím, zadejte vlastní hody pomocí numerické klávesnice nebo vypočítejte úspěchy ve hrách, které používají systém kostek a obtížnosti.

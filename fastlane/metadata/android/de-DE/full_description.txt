@@ -1,0 +1,1 @@
+Maki Dice ist ein schneller und einfacher Würfelgenerator für Tabletop-Rollenspiele. Würfle mit einem einzigen Tippen auf einen beliebigen Standard-Polyederwürfel, gib benutzerdefinierte Würfe über den Ziffernblock ein oder berechne Erfolge für Spiele mit Würfel- und Schwierigkeitssystemen.

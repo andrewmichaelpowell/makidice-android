@@ -1,0 +1,1 @@
+Maki Dice adalah aplikasi penggulir dadu yang cepat dan mudah untuk permainan peran meja. Gulirkan dadu polihedral standar apa pun dengan sekali sentuh, masukkan guliran khusus menggunakan keypad angka, atau hitung keberhasilan untuk permainan yang menggunakan sistem dadu dan tingkat kesulitan.

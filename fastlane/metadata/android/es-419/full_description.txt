@@ -1,0 +1,1 @@
+Maki Dice es un lanzador de dados rápido y sencillo para juegos de rol de mesa. Lanza cualquier dado poliédrico estándar con un solo toque, introduce tiradas personalizadas con el teclado numérico o calcula los éxitos en juegos que utilizan un sistema de dados y dificultad.

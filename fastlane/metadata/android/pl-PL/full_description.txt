@@ -1,0 +1,1 @@
+Maki Dice to szybka i prosta gra do rzucania kostkami do gier fabularnych. Rzuć dowolną standardową kostką wielościenną jednym dotknięciem, wprowadź własne rzuty za pomocą klawiatury numerycznej lub oblicz sukcesy w grach wykorzystujących system kostek i poziom trudności.
