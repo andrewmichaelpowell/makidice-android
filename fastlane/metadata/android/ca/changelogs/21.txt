@@ -1,1 +1,0 @@
-Aquesta versió inclou petites millores a la interfície d'usuari.

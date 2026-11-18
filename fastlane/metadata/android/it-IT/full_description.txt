@@ -1,1 +1,0 @@
-Maki Dice è un'applicazione per lanciare dadi veloce e facile da usare, ideale per i giochi di ruolo da tavolo. Lancia qualsiasi dado poliedrico standard con un solo tocco, inserisci lanci personalizzati utilizzando il tastierino numerico o calcola i successi per i giochi che utilizzano dadi e un sistema di difficoltà.

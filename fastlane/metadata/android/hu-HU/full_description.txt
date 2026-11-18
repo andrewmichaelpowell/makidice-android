@@ -1,1 +1,0 @@
-A Maki Dice egy gyors és egyszerű kockadobó asztali szerepjátékokhoz. Dobj bármelyik szabványos sokszögű kockával egyetlen koppintással, adj meg egyéni dobásokat a számbillentyűzet segítségével, vagy számítsd ki a sikereket a kockákat és nehézségi rendszert használó játékokban.

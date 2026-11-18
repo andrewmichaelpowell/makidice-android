@@ -1,1 +1,0 @@
-Denne versjonen inneholder mindre forbedringer av brukergrensesnittet.

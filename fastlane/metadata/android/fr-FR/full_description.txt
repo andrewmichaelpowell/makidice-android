@@ -1,1 +1,0 @@
-Maki Dice est un lanceur de dés rapide et facile pour les jeux de rôle sur table. Lancez n'importe quel dé polyédrique standard d'un simple clic, saisissez des jets personnalisés à l'aide du pavé numérique ou calculez les succès pour les jeux utilisant un système de dés et de difficulté.

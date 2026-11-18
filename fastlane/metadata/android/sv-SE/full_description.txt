@@ -1,1 +1,0 @@
-Maki Dice är ett snabbt och enkelt tärningskast för bordsrollspel. Slå vilken som helst av de vanliga polyedriska tärningarna med ett enda tryck, ange anpassade kast med hjälp av sifferknapparna eller beräkna framgångar för spel som använder ett tärningssystem med svårighetsgrad.
